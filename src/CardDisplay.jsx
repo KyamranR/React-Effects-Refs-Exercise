@@ -1,13 +1,17 @@
 function CardDisplay({ cards }) {
   return (
     <div>
-      {cards.map((card, index) => (
-        <img
-          key={index}
-          src={card.image}
-          alt={`${card.value} of ${card.suit}`}
-        />
-      ))}
+      {cards && cards.length > 0 ? (
+        cards.map((card, index) => (
+          <img
+            key={index}
+            src={card.image}
+            alt={`${card.value} of ${card.suit}`}
+          />
+        ))
+      ) : (
+        <p>No cards to display</p>
+      )}
     </div>
   );
 }
